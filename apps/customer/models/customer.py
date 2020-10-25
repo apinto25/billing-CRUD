@@ -10,9 +10,9 @@ def customer_image_file_path(instance, file_name):
 
 
 class Customer(models.Model):
-    id_number = models.IntegerField('Cedula', primary_key=True)
-    name = models.CharField('Nombre', max_length=250)
-    last_name = models.CharField('Apellido', max_length=250)
-    address = models.CharField('Dirección', max_length=250)
-    phone = models.BigIntegerField('Celular')
-    photo = models.ImageField('Imagen', upload_to='images/', blank=True, null=True)
+    id_number = models.IntegerField('ID number', primary_key=True)
+    name = models.CharField('Name', max_length=250)
+    last_name = models.CharField('Last name', max_length=250)
+    address = models.CharField('Address', max_length=250)
+    phone = models.BigIntegerField('Phone number')
+    photo = models.ImageField('Profile photo', upload_to=customer_image_file_path, blank=True, null=True)
