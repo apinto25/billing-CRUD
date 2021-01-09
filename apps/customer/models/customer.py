@@ -1,3 +1,6 @@
+import os
+import uuid
+
 from django.db import models
 
 
@@ -10,7 +13,7 @@ def customer_image_file_path(instance, file_name):
 
 
 class Customer(models.Model):
-    id_number = models.IntegerField('ID number', primary_key=True)
+    id_number = models.IntegerField('ID number', unique=True)
     name = models.CharField('Name', max_length=250)
     last_name = models.CharField('Last name', max_length=250)
     address = models.CharField('Address', max_length=250)
